@@ -78,7 +78,7 @@ This guide will walk you through deploying the OrderFlow POC to Vercel.
 
 3. **Navigate to Project Root**
    ```bash
-   cd poc-orderflow
+   cd orderflow-automation-poc  # or wherever you cloned the repo
    ```
 
 4. **Deploy**
