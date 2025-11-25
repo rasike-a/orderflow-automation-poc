@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+*.sqlite
+*.db
+data.sqlite
+backend/data.sqlite
+test-flow.js
+get-jwt.js
+
