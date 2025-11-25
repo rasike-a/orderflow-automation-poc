@@ -66,5 +66,5 @@ temp/
 *.tmp
 
 # Test files (if any)
-test-flow.js
+**/test-flow.js
 
