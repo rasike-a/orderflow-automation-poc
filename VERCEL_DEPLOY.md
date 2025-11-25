@@ -37,7 +37,7 @@ This guide will walk you through deploying the OrderFlow POC to Vercel.
 
 3. **Configure Project**
    - **Framework Preset**: Other
-   - **Root Directory**: `poc-orderflow` (or leave blank if deploying from root)
+   - **Root Directory**: `.` (or leave blank - files are at repository root)
    - **Build Command**: Leave empty (or `cd backend && npm install`)
    - **Output Directory**: Leave empty
    - Click "Deploy"

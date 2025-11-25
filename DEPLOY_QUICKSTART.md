@@ -13,7 +13,7 @@
 3. **Import** `rasike-a/orderflow-automation-poc`
 4. **Configure**:
    - Framework: **Other**
-   - Root Directory: `poc-orderflow`
+   - Root Directory: `.` (or leave empty - files are at repository root)
    - Build Command: (leave empty)
    - Output Directory: (leave empty)
 5. **Click "Deploy"**
