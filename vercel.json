@@ -9,15 +9,15 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/src/api/index.js"
+      "dest": "backend/src/api/index.js"
     },
     {
       "src": "/(.*\\.(html|js|css|png|jpg|jpeg|gif|svg|ico))",
-      "dest": "/frontend/$1"
+      "dest": "frontend/$1"
     },
     {
       "src": "/",
-      "dest": "/frontend/index.html"
+      "dest": "frontend/index.html"
     }
   ]
 }
