@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "cd backend && npm install",
+  "installCommand": "cd backend && npm install",
   "builds": [
     {
       "src": "backend/src/api/index.js",
