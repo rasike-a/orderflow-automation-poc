@@ -27,11 +27,14 @@ function authMiddleware(req, res, next) {
   }
 }
 
-function createMagicLink(email) {
+function createMagicLink(email, baseUrl = null) {
   return new Promise((resolve, reject) => {
     const now = new Date().toISOString();
     const expiresAt = new Date(Date.now() + 15 * 60 * 1000).toISOString();
     const token = uuidv4();
+
+    // Auto-detect URL if not provided
+    const verifyUrl = baseUrl || VERIFY_URL || 'http://localhost:4000/auth/magic-link/verify';
 
     db.get(`SELECT * FROM users WHERE email=?`, [email], (err, row) => {
       if (err) return reject(err);
@@ -43,7 +46,7 @@ function createMagicLink(email) {
           VALUES (?, ?, ?, ?, ?)
         `, [id, u.id, token, expiresAt, now], (err2) => {
           if (err2) return reject(err2);
-          resolve({ url: `${VERIFY_URL}?token=${token}` });
+          resolve({ url: `${verifyUrl}?token=${token}` });
         });
       };
 

@@ -29,7 +29,11 @@ app.get("/health", (_, res) => res.json({ ok: true }));
 app.post("/auth/magic-link", async (req, res) => {
   try {
     const { email } = req.body;
-    const { url } = await createMagicLink(email);
+    // Auto-detect base URL from request (falls back to env var or localhost)
+    const protocol = req.secure ? 'https' : 'http';
+    const host = req.headers.host || 'localhost:4000';
+    const baseUrl = process.env.MAGIC_LINK_VERIFY_URL || `${protocol}://${host}/auth/magic-link/verify`;
+    const { url } = await createMagicLink(email, baseUrl);
     res.json({ status: "sent", message: "Check your email", url });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
